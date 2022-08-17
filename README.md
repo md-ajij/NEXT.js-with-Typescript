@@ -4,14 +4,16 @@
 ---  
 
 ```
-npx create-next-app my-project --typescript  
+npx create-next-app my-project --typescript
+```  
 
 # or  
-
-npx create-next-app my-project --ts  
+```
+npx create-next-app my-project --ts
+```  
 
 # or  
-
+```
 yarn create next-app my-project --typescript  
 ```  
 # Arrow function(void) that return nothing  
