@@ -1,5 +1,19 @@
 # NEXT.js-with-Typescript  
----
+---  
+# To create NEXT app with Typescript:-  
+---  
+
+```
+npx create-next-app my-project --typescript  
+
+# or  
+
+npx create-next-app my-project --ts  
+
+# or  
+
+yarn create next-app my-project --typescript  
+```  
 # Arrow function(void) that return nothing  
 ```
 const myFunc=(a:number,b:number):void=>{
