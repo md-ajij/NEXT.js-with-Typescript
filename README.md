@@ -319,20 +319,19 @@ export defoult AddPost;
   # or  
   
   ```
-  
-  import React, { useState, ChangeEvent,FormEvent } from "react";  
+  import React, { useState, ChangeEvent,FormEvent } from "react";
 
   type NewUserProps = {
     name: string;
     email: string;
-  };  
+  };
   const NewUser = () => {
-    const [user, setUser] = useState<NewUserProps>({ name: "", email: "" });  
+    const [user, setUser] = useState<NewUserProps>({ name: "", email: "" });
 
-    const handleInputFieldChange = (e: ChangeEvent<HTMLInputElement>) => {  
-      const fieldName = e.target.name;  
-      setUser({ ...user, [fieldName]: e.target.value });  
-    };  
+    const handleInputFieldChange = (e: ChangeEvent<HTMLInputElement>) => {
+      const fieldName = e.target.name;
+      setUser({ ...user, [fieldName]: e.target.value });
+    };
 
     const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
       e.preventDefault();
