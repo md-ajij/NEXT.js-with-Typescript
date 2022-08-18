@@ -1,6 +1,6 @@
 # NEXT.js-with-Typescript  
 ---  
-# To create NEXT app with Typescript:-  
+# 1. To create NEXT app with Typescript:-  
 ---  
 
 ```
@@ -16,7 +16,17 @@ npx create-next-app my-project --ts
 ```
 yarn create next-app my-project --typescript  
 ```  
-# Type of parameters of a Arrow function(void) that return nothing  
+# To run the app. Enter the following comand in terminal:-  
+```
+npm run dev
+```  
+## or  
+```
+yearn dev
+```  
+
+
+# 2. Type of parameters of a Arrow function(void) that return nothing  
 ```
 const myFunc=(a:number,b:number):void=>{
    consol.log(a+b);
@@ -24,7 +34,7 @@ const myFunc=(a:number,b:number):void=>{
 
 myFunc(10,5);
 ```  
-# Type of parameters of a Arrow function that return a sting  
+# 3. Type of parameters of a Arrow function that return a sting  
 
 ```
 
@@ -37,7 +47,7 @@ const myFunc=(a:number,b:number):string =>{
 myFunc(10,5);
 ```  
 
-# Optional Type of a variable:- 
+# 4. Optional Type of a variable:- 
 
 ```
 
@@ -55,7 +65,7 @@ myFunc(10,5);
 
 
 
-# Normal function(void) that return nothing  
+# 5. Normal function(void) that return nothing  
 
 ```
 
@@ -68,7 +78,7 @@ function myFunc(a:number,b:number):void {
 myFunc(10,5);
 
 ```  
-# Normal function(sting) that return a sting  
+# 6. Normal function(sting) that return a sting  
 
 ```
 
@@ -83,11 +93,12 @@ function myFunc(a:number,b:number):string {
 myFunc(10,5);
 
 ```  
-# Type of  Arrow function(void) that return nothing  
+# 7. Type of  Arrow function(void) that return nothing  
 
 ```
+let myFunc:Function;
 
-const myFunc:Function =(a:number,b:number):void=>{
+myFunc=(a:number,b:number):void=>{
 
    consol.log(a+b);
 
@@ -97,26 +108,11 @@ myFunc(10,5);
 
 ```  
 
-Type of Arrow function(sting) that return a sting  
+# 8. Type of Arrow function(sting) that return a sting  
 
 ```
-
-const myFunc:Function =(a:number,b:number):string =>{
-
-   consol.log(a+b);
-
- return `a is ${a} and b is ${b}`;
-
-}
-
-myFunc(10,5);
-```  
-
-# Optional Typethat of a variable:- 
-
-```
-
-const myFunc:Function =(a:number,b:number):string =>{
+let myFunc:Function;
+myFunc =(a:number,b:number):string =>{
 
    consol.log(a+b);
 
@@ -125,8 +121,78 @@ const myFunc:Function =(a:number,b:number):string =>{
 }
 
 myFunc(10,5);
+```  
+# 9. Functional Component in NEXT.JS-WITH-TYPESCRIPT:-  
+## IPost.ts  
+```
+export interface IPost {
 
+  id: number
+
+  title: string
+
+  body: string
+
+}
+```  
+# Functional Components:-  
+// AddPost.tsx  
+```
+
+import * as React from 'react';
+import { IPost } from '../types';
+
+type Props = {
+  savePost: (e: React.FormEvent, formData: IPost) => void
+}
+
+const AddPost: React.FC<Props> = ({ savePost }) => {
+  const [formData, setFormData] = React.useState<IPost>()
+
+  const handleFormInputFiled = (e: React.FormEvent<HTMLInputElement>): void => {
+    setFormData({
+      ...formData,
+      [e.currentTarget.id]: e.currentTarget.value,
+    })
+  }
+
+export defoult AddPost;
 ```  
 
 
+# Functional Components:-  
 
+// AddPost.tsx  
+
+```
+
+import * as React from 'react';  
+import React, {useState,FormEvent,FC} from 'react';
+
+import { IPost } from '../types';
+
+type Props = {
+
+  savePost: (e: FormEvent, formData: IPost) => void
+
+}
+
+const AddPost: FC<Props> = ({ savePost }) => {
+
+  const [formData, setFormData] = useState<IPost>()
+
+  const handleFormInputFiled = (e: FormEvent<HTMLInputElement>): void => {
+
+    setFormData({
+
+      ...formData,
+
+      [e.target.name]: e.target.value,
+
+    })
+
+  }
+
+export defoult AddPost;
+
+```  
