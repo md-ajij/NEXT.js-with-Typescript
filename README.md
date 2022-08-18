@@ -314,9 +314,11 @@ export defoult AddPost;
 
     export default NewUser;
     ```  
-    # or
-
-  # Ajij.tsx
+    
+    
+  # or  
+  
+  ```
   
   import React, { useState, ChangeEvent,FormEvent } from "react";
 
