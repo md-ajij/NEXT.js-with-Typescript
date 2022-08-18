@@ -311,68 +311,7 @@ export defoult AddPost;
       );
 
     };
-
-    export default NewUser;
+ export default NewUser;
     ```  
     
-    
-  # or  
-  
-  
-  ```
-  
-  import React, { useState, ChangeEvent,FormEvent } from "react";
-  
-  type NewUserProps = {
-    name: string;
-    email: string;
-  };
-  
-  const NewUser = () => {
-    const [user, setUser] = useState<NewUserProps>({ name: "", email: "" });
-
-    const handleInputFieldChange = (e: ChangeEvent<HTMLInputElement>) =>{
-      const fieldName = e.target.name;
-      setUser({ ...user, [fieldName]: e.target.value });
-    };
-
-    const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
-      e.preventDefault();
-      console.log(user);
-    };
-    return (
-      <div>
-        <form onSubmit={handleSubmit}>
-          <div>
-            <label htmlFor="name">
-              Name
-              <input
-                type="text"
-                id="name"
-                name="name"
-                value={user.name}
-                onChange={handleInputFieldChange}
-                required
-              />
-            </label>
-          </div>
-          <div>
-            <label htmlFor="email">
-              Email
-              <input
-                type="email"
-                id="email"
-                name="email"
-                value={user.email}
-                onChange={handleInputFieldChange}
-                required
-              />
-            </label>
-          </div>
-          <button type="submit">Create User</button>
-        </form>
-      </div>
-      )
-    }
-   export default NewUser;
-   ```
+ 
