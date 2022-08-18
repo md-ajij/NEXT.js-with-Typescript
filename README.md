@@ -16,7 +16,7 @@ npx create-next-app my-project --ts
 ```
 yarn create next-app my-project --typescript  
 ```  
-# Arrow function(void) that return nothing  
+# Type of parameters of a Arrow function(void) that return nothing  
 ```
 const myFunc=(a:number,b:number):void=>{
    consol.log(a+b);
@@ -24,7 +24,7 @@ const myFunc=(a:number,b:number):void=>{
 
 myFunc(10,5);
 ```  
-# Arrow function(sting) that return a sting  
+# Type of parameters of a Arrow function that return a sting  
 
 ```
 
@@ -36,6 +36,24 @@ const myFunc=(a:number,b:number):string =>{
 
 myFunc(10,5);
 ```  
+
+# Optional Type of a variable:- 
+
+```
+
+const myFunc =(a:number,b:number,c?:number=500):string =>{
+
+   consol.log(a+b);
+
+ return `a is ${a} and b is ${b}`;
+
+}
+
+myFunc(10,5);
+
+```  
+
+
 
 # Normal function(void) that return nothing  
 
@@ -79,7 +97,7 @@ myFunc(10,5);
 
 ```  
 
-# Type of Arrow function(sting) that return a sting  
+Type of Arrow function(sting) that return a sting  
 
 ```
 
@@ -92,5 +110,23 @@ const myFunc:Function =(a:number,b:number):string =>{
 }
 
 myFunc(10,5);
+```  
+
+# Optional Typethat of a variable:- 
+
+```
+
+const myFunc:Function =(a:number,b:number):string =>{
+
+   consol.log(a+b);
+
+ return `a is ${a} and b is ${b}`;
+
+}
+
+myFunc(10,5);
+
+```  
+
 
 
