@@ -318,7 +318,9 @@ export defoult AddPost;
     
   # or  
   
+  
   ```
+  
   import React, { useState, ChangeEvent,FormEvent } from "react";
   
   type NewUserProps = {
@@ -372,5 +374,5 @@ export defoult AddPost;
       </div>
       )
     }
- export default NewUser;
-```  
+   export default NewUser;
+   ```
