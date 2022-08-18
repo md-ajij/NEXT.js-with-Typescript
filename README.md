@@ -320,15 +320,16 @@ export defoult AddPost;
   
   ```
   import React, { useState, ChangeEvent,FormEvent } from "react";
-
+  
   type NewUserProps = {
     name: string;
     email: string;
-  };  
+  };
+  
   const NewUser = () => {
-    const [user, setUser] = useState<NewUserProps>({ name: "", email: "" });  
+    const [user, setUser] = useState<NewUserProps>({ name: "", email: "" });
 
-    const handleInputFieldChange = (e: ChangeEvent<HTMLInputElement>) => {
+    const handleInputFieldChange = (e: ChangeEvent<HTMLInputElement>) =>{
       const fieldName = e.target.name;
       setUser({ ...user, [fieldName]: e.target.value });
     };
@@ -339,7 +340,6 @@ export defoult AddPost;
     };
     return (
       <div>
-        <h2>Create User</h2>
         <form onSubmit={handleSubmit}>
           <div>
             <label htmlFor="name">
@@ -370,7 +370,7 @@ export defoult AddPost;
           <button type="submit">Create User</button>
         </form>
       </div>
-      );
-    };
+      )
+    }
  export default NewUser;
 ```  
