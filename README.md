@@ -324,9 +324,9 @@ export defoult AddPost;
   type NewUserProps = {
     name: string;
     email: string;
-  };
+  };  
   const NewUser = () => {
-    const [user, setUser] = useState<NewUserProps>({ name: "", email: "" });
+    const [user, setUser] = useState<NewUserProps>({ name: "", email: "" });  
 
     const handleInputFieldChange = (e: ChangeEvent<HTMLInputElement>) => {
       const fieldName = e.target.name;
