@@ -372,9 +372,5 @@ export defoult AddPost;
       </div>
       );
     };
-
-    export default NewUser;
+ export default NewUser;
 ```  
-
-
-
