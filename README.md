@@ -582,12 +582,14 @@ export default User;
 # 12.3 Array of Object:-  
 
 ## App.tsx
+
+```
 // import React from "react";
 // import "./App.css";
 
 import User from "./components/User";
 
-const users =
+const users =[
   {
     id: 1,
     name: "anisul islam",
@@ -651,11 +653,3 @@ export default User;
 
 ```  
 
-
-
-
-
-
-
-    
- 
