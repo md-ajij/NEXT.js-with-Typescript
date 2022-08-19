@@ -504,6 +504,8 @@ const handleClick = (): void => {
 ```  
 
 # 12.typescript for Props - User defined types  
+---  
+
 - Object
 -  Array
 -   Union, 
@@ -513,35 +515,6 @@ const handleClick = (): void => {
 - custom type  
 
 # 12.1 object props  
-## User.tsx  
-
-```
-// import React from "react";
-
-type UserProps = {
-  user: {
-    name: string;
-    email: string;
-    age: number;
-    isRegistered: boolean;
-  };
-};
-const User = ({ user }: UserProps) => {
-  return (
-    <div style={{ border: "1px solid", margin: "1rem" }}>
-      <h2>{user.name}</h2>
-      <p>{user.email}</p>
-      <p>{user.age} years old</p>
-      {user.isRegistered ? (
-        <p>Registered Student</p>
-      ) : (
-        <p>Unregistered Student</p>
-      )}
-    </div>
-  );
-};
-export default User;
-```  
 
 ## App.tsx
 
@@ -572,14 +545,49 @@ function App() {
 export default App;
 ```  
 
-# 12.2
+## User.tsx  
 
-// more updates for App.tsx
-import React from "react";
-import "./App.css";
+```
+// import React from "react";
+
+type UserProps = {
+  user: {
+    name: string;
+    email: string;
+    age: number;
+    isRegistered: boolean;
+  };
+};
+const User = ({ user }: UserProps) => {
+  return (
+    <div style={{ border: "1px solid", margin: "1rem" }}>
+      <h2>{user.name}</h2>
+      <p>{user.email}</p>
+      <p>{user.age} years old</p>
+      {user.isRegistered ? (
+        <p>Registered Student</p>
+      ) : (
+        <p>Unregistered Student</p>
+      )}
+    </div>
+  );
+};
+export default User;
+```  
+
+
+
+# 12.2 Array 
+
+# 12.3 Array of Object:-  
+
+## App.tsx
+// import React from "react";
+// import "./App.css";
+
 import User from "./components/User";
 
-const users =[ 
+const users =
   {
     id: 1,
     name: "anisul islam",
@@ -599,14 +607,55 @@ const users =[
 function App() {
   return (
     <div className="App">
-      <h1>User Management App</h1>
+      <h1>User Details </h1>
       {users.map((user) => (
         <User key={user.id} user={user} />
       ))}
     </div>
   );
 }
-
 export default App;
+```  
+
+
+# User.tsx
+
+```
+
+// import React from "react";
+
+type UserProps = {
+  user: {
+    id: number,
+    name: string;
+    email: string;
+    age: number;
+    isRegistered: boolean;
+  };
+};
+const User = ({ user }: UserProps) => {
+  return (
+    <div style={{ border: "1px solid", margin: "1rem" }}>
+      <h2>{user.name}</h2>
+      <p>{user.email}</p>
+      <p>{user.age} years old</p>
+      {user.isRegistered ? (
+        <p>Registered Student</p>
+      ) : (
+        <p>Unregistered Student</p>
+      )}
+    </div>
+  );
+};
+export default User;
+
+```  
+
+
+
+
+
+
+
     
  
