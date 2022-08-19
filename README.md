@@ -686,15 +686,15 @@ import User from "./components/User";
 const users =[
   {
     id: 1,
-    name: "anisul islam",
-    email: "anisul2010s@yahoo.co.uk",
+    name: "Md Naj",
+    email: "mdnaj@gmail.com",
     age: 32,
     isRegistered: true,
   },
   {
     id: 2,
-    name: "Rabeya Begum",
-    email: "rabu2010s@yahoo.co.uk",
+    name: "Md Saju",
+    email: "mdsaju@gmail.com",
     age: 31,
     isRegistered: false,
   },
@@ -746,4 +746,83 @@ const User = ({ user }: UserProps) => {
 export default User;
 
 ```  
+# 12.5 Object:-  
+
+## App.tsx  
+
+```
+// import React from "react";
+// import "./App.css";
+import User from "./components/User";
+
+const user1 = {
+  name: "anisul islam",
+  email: "anisul2010s@yahoo.co.uk",
+  age: 32,
+  isRegistered: true,
+  lang: ['Beng','Eng'],
+};
+const user2 = {
+  name: "Rabeya Begum",
+  email: "rabu2010s@yahoo.co.uk",
+  age: 31,
+  isRegistered: false,
+  lang: ['Arabic', 'Hindi'],
+};
+
+function App() {
+  return (
+    <div className="App">
+      <h1>User Management App</h1>
+      <User user={user1} />
+      <User user={user2} />
+    </div>
+  );
+}
+
+export default App;
+```  
+
+# User.tsx 
+```
+
+// import React from "react";
+
+type UserProps = {
+  user: {
+    id: number,
+    name: string;
+    email: string;
+    age: number;
+    isRegistered: boolean;
+    lang: string[];
+  };
+};
+const User = ({ user }: UserProps) => {
+  return (
+    <div style={{ border: "1px solid", margin: "1rem" }}>
+      <h2>{user.name}</h2>
+      <p>{user.email}</p>
+      <p>{user.age} years old</p>
+      {user.isRegistered ? (
+        <p>Registered Student</p>
+      ) : ( <p>Unregistered Student</p>)
+      }
+      <p> Speaks: {user.lang.map((language,index)=>{
+                    return <span key={index}>{language}</span> ;
+              })};
+      </p>        
+    </div>
+  );
+};
+export default User;
+
+```  
+---  
+
+
+
+
+
+
 
