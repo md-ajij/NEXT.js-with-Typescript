@@ -901,6 +901,7 @@ export default User;
 
 ## App.tsx  
 ```
+import Message from "./components/Message";
 function App() {
   return (
     <div className="App">
@@ -913,7 +914,7 @@ function App() {
 export default App;
 ```  
 
-## User.tsx  
+## Message.tsx  
 
 ```
 
