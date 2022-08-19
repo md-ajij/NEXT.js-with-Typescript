@@ -585,16 +585,40 @@ const App=() =>{
  return(
    <div >
       <User 
-         lang={["Bengali","English","Arabic"]};
+         lang={["Bengali","English","Arabic","Hindi"]};
        />
    </div>   
  )
 };
 export default App;
+```  
+
+# User.tsx  
+
+
+```
+// import React from "react";
+type UserProps = {
+
+   lang : string[];
+}
+const User =({lang}: UserProps) => {
+   return(
+      <dic>
+         <p> Speaks: {lang.map((language,index)=>{
+                    return <span key={index}>{language}</span> ;
+              })};
+         </p>     
+      </div>   
+   );
+};
+export default User;
+```  
+
 
 # 12.3 Array of Object:-  
 
-## App.tsx
+## App.tsx  
 
 ```
 // import React from "react";
