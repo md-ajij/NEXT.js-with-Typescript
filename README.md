@@ -122,7 +122,7 @@ myFunc =(a:number,b:number):string =>{
 
 myFunc(10,5);
 ```  
-# 9. Functional Component in NEXT.JS-WITH-TYPESCRIPT:-  
+# 9. Type of Functional Component in NEXT.JS-WITH-TYPESCRIPT:-  
 ## IPost.ts  
 ```
 export interface IPost {
@@ -135,7 +135,7 @@ export interface IPost {
 
 }
 ```  
-# Functional Components:-  
+# Type of Functional Components:-  
 // AddPost.tsx  
 ```
 
@@ -196,7 +196,7 @@ const AddPost: FC<Props> = ({ savePost }) => {
 export defoult AddPost;
 
 ```  
-# 10. Typing event props:-
+# 10. Type of event :-
 
   <!-- click event: event: React.MouseEvent<HTMLButtonElement>
 
@@ -312,6 +312,10 @@ export defoult AddPost;
 
     };
  export default NewUser;
-    ```  
+```  
+
+# 11. typescript for Props - built in types  
+- built in types example -> string, number, boolean
+- extension .ts and component extension is .tsx not .js or .jsx
     
  
