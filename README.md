@@ -577,7 +577,20 @@ export default User;
 
 
 
-# 12.2 Array 
+# 12.2 Array  
+# App.tsx  
+
+```
+const App=() =>{
+ return(
+   <div >
+      <User 
+         lang={["Bengali","English","Arabic"]};
+       />
+   </div>   
+ )
+};
+export default App;
 
 # 12.3 Array of Object:-  
 
