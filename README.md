@@ -318,11 +318,10 @@ export defoult AddPost;
 - built in types example -> string, number, boolean
 - extension .ts and component extension is .tsx not .js or .jsx  
 
-<p> auto completion -> props  </p>
+1. <p> auto completion -> props  </p>
+2. <p> if we pass anything other than string as name props we will get error   </p>
+3. <p> component props is an object  </p>  
 
-<p> if we pass anything other than string as name props we will get error   </p>
-
-<p> component props is an object  </p>
 # Version-1  
 
 ## User.tsx 
