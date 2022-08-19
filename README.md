@@ -577,8 +577,6 @@ const User = ({ user }: UserProps) => {
 export default User;
 ```  
 
-
-
 # 12.2 Array  
 # App.tsx  
 
@@ -618,7 +616,65 @@ export default User;
 ```  
 
 
-# 12.3 Array of Object:-  
+
+# 12.3 Array in Object  
+# App.tsx  
+
+```
+// import React from "react"
+import User from "./components/User";
+const userDetails ={
+   name:"Md Ajij",
+   age: 36,
+   isRegistered: true,
+   lang:["Bengali","English","Arabic","Hindi"],
+};
+
+const App=() => {
+ return(
+   <div >
+      <User 
+         user = {userDetails};
+       />
+   </div>   
+ )
+};
+export default App;
+```  
+
+# User.tsx  
+
+
+```
+// import React from "react";
+
+type UserProps = {
+   name: string;
+   age:number;
+   isRegistered: true,
+   lang : string[];
+}
+const User =({user}: UserProps) => {
+   return(
+      <div>
+         <h1>{user.name}</h1>
+         <h1>{user.age}</h1>
+         {user.isRegistered ? (<p> Register user</p>) : (<p> Not Registered</p>)
+         }
+         <p> Speaks: {user.lang.map((language,index)=>{
+                    return <span key={index}>{language}</span> ;
+              })};
+         </p>     
+      </div>   
+   );
+};
+export default User;
+```  
+
+
+
+
+# 12.4 Array of Object:-  
 
 ## App.tsx  
 
