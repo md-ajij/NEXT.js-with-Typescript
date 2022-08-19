@@ -746,7 +746,85 @@ const User = ({ user }: UserProps) => {
 export default User;
 
 ```  
-# 12.5 Object:-  
+# 12.5 Array of Object:-  
+## App.tsx  
+
+```
+// import React from "react";
+// import "./App.css";
+
+import User from "./components/User";
+
+const usersDetails =[
+  {
+    id: 1,
+    name: "Md Naj",
+    email: "mdnaj@gmail.com",
+    age: 32,
+    isRegistered: true,
+  },
+  {
+    id: 2,
+    name: "Md Saju",
+    email: "mdsaju@gmail.com",
+    age: 31,
+    isRegistered: false,
+  },
+];
+
+function App() {
+  return (
+    <div className="App">
+      <h1>User Details </h1>
+     
+        <User users={usersDetails} />
+      ))}
+    </div>
+  );
+}
+export default App;
+```  
+
+
+# User.tsx
+
+```
+
+// import React from "react";
+
+type UserProps = {
+  users: {
+    id: number,
+    name: string;
+    email: string;
+    age: number;
+    isRegistered: boolean;
+  };
+};
+const User = ({ users }: UserProps) => {
+  return (
+    <div >
+      {users.map((user)=>{
+         const {id,name,email,age,isRegistered} = user;
+         return(
+            <div key={id} style={{ border: "1px solid", margin: "1rem" }}>
+                <h2>{name}</h2>
+                 <p>{email}</p>
+                 <p>{age} years old</p>
+                 {isRegistered ? (<p>Registered Student</p) : (<p>Unregistered Student</p>);
+                 };
+            </div>
+         );
+       })};  
+    </div>
+  );
+};
+export default User;
+
+```  
+
+
+# 12.6 Object:-  
 
 ## App.tsx  
 
