@@ -897,6 +897,45 @@ export default User;
 
 ```  
 ---  
+# 13. Union of Types:-  
+
+## App.tsx  
+```
+function App() {
+  return (
+    <div className="App">
+      <h1>User Management App</h1>
+      <Message text ="UPDATE" />
+      {/* <User users={users} /> */}
+    </div>
+  );
+}
+export default App;
+```  
+
+## User.tsx  
+
+```
+
+// import React from "react";
+
+type MessageProps = {
+  text: "ADD" | "UPDATE" | "DELETE";
+};
+
+const Message = (props: MessageProps) => {
+  if (props.text === "ADD") {
+    return <p>User is added</p>;
+  } else if (props.text === "UPDATE") {
+    return <p>User is updated</p>;
+  }
+  return <p>User is deleted</p>;
+};
+
+export default Message;
+```  
+
+
 
 
 
