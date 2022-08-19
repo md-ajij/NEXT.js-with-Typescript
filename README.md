@@ -316,6 +316,193 @@ export defoult AddPost;
 
 # 11. typescript for Props - built in types  
 - built in types example -> string, number, boolean
-- extension .ts and component extension is .tsx not .js or .jsx
+- extension .ts and component extension is .tsx not .js or .jsx  
+
+// auto completion -> props.
+// if we pass anything other than string as name props we will get error
+// component props is an object
+# Version-1  
+
+## User.tsx 
+
+
+```
+// import React from "react";
+
+
+const User = (props: {name:string;email: string; age: number;isRegistered: boolean;})=>{
+  return (
+    <div style={{ border: "1px solid", margin: "1rem" }}>
+      <h2>{props.name}</h2>
+      <p>{props.email}</p>
+      <p>{props.age} years old</p>
+      {props.isRegistered ? (<p>Registered Student</p>) : (<p>Unregistered Student</p>
+      )}
+    </div>
+  );
+};
+export default User;
+```  
+
+
+## App.tsx
+
+
+```
+// import React from "react";
+// import "./App.css";
+
+import User from "./components/User";
+
+function App() {
+  return (
+    <div className="App">
+      <h1>User Management App</h1>
+      <User
+        name="Md Naj"
+        email="mdnaj@gmail.com"
+        age={32}
+        isRegistered={true}
+      />
+      <User
+        name="Rabeya Begum"
+        email="rabu2010s@yahoo.co.uk"
+        age={31}
+        isRegistered={false}
+      />
+    </div>
+  );
+}
+
+export default App;
+```  
+
+# Version -2
+
+
+## User.tsx
+
+```
+
+// import React from "react";
+
+type UserProps = {
+  name: string;
+  email: string;
+  age: number;
+  isRegistered: boolean;
+};
+const User = (props: UserProps) => {
+  return (
+    <div style={{ border: "1px solid", margin: "1rem" }}>
+      <h2>{props.name}</h2>
+      <p>{props.email}</p>
+      <p>{props.age} years old</p>
+      {props.isRegistered ? (<p>Registered Student</p>) : (
+        <p>Unregistered Student</p>
+      )}
+      
+    </div>
+  );
+};
+export default User;
+
+```  
+
+## App.tsx
+
+
+```
+// import React from "react";
+// import "./App.css";
+
+import User from "./components/User";
+
+function App() {
+  return (
+    <div className="App">
+      <h1>User Management App</h1>
+      <User
+        name="Md Naj"
+        email="mdnaj@gmail.com"
+        age={32}
+        isRegistered={true}
+      />
+      <User
+        name="Md Saju"
+        email="mdsaju@gmail.com"
+        age={31}
+        isRegistered={false}
+      />
+    </div>
+  );
+}
+
+export default App;
+```  
+
+
+# Version-3
+ ## User.tsx  
+ 
+ ```
+//import React from "react";
+type UserProps = {
+  name: string;
+  email: string;
+  age: number;
+  isRegistered: boolean;
+};
+const User = ({ name, email, age, isRegistered }: UserProps) => {
+  return (
+    <div style={{ border: "1px solid", margin: "1rem" }}>
+      <h2>{name}</h2>
+      <p>{email}</p>
+      <p>{age} years old</p>
+      {isRegistered ? <p>Registered Student</p> : <p>Unregistered Student</p>}
+    </div>
+  );
+};
+export default User;
+```  
+
+## App.tsx
+
+
+```
+// import React from "react";
+// import "./App.css";
+
+import User from "./components/User";
+
+function App() {
+  return (
+    <div className="App">
+      <h1>User Management App</h1>
+      <User
+        name="Md Naj"
+        email="mdnaj@gmail.com"
+        age={32}
+        isRegistered={true}
+      />
+      <User
+        name="Md Saju"
+        email="mdsaju@gmail.com"
+        age={31}
+        isRegistered={false}
+      />
+    </div>
+  );
+}
+
+export default App;
+```  
+
+
+
+// void
+const handleClick = (): void => {
+  console.log("clicked");
+};
     
  
