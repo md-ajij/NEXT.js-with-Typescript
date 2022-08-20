@@ -1104,12 +1104,12 @@ export default Button;
       );
     };
 
-    export default NewUser;
-    ```  
+export default NewUser;
+```  
     
 
 # 16. Typing useState Hooks:-  
-## 16.1
+## 16.1  
 ## App.tsx  
 
 ```
@@ -1135,13 +1135,12 @@ const App =()=>{
     </div>
   );
 };
-
 export default App;
 ```  
 
-## 16.2
-## App.tsx
-# Dealing with future values in useState Hook
+## 16.2  
+## App.tsx  
+# Dealing with future values in useState Hook  
 
 ```
 import React, { useState } from "react";
@@ -1176,8 +1175,7 @@ const App = () => {
 export default App;
 ```  
 
-
-## 16.3
+## 16.3  
 ## App.tsx  
 
 ```
@@ -1213,5 +1211,3 @@ const App = () => {
 
 export default App;
 ```  
-
-
