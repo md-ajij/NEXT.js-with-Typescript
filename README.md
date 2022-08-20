@@ -1018,7 +1018,7 @@ const Card = ({children}: CardProps) => {
 
 export default Card;
 ```  
-# Style Type Props:-
+# 15. Style Type Props:-
 
 ## App.tsx  
 ```
@@ -1060,19 +1060,4 @@ const Button = (props: ButtonProps) => {
 
 export default Button;
 ```  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
