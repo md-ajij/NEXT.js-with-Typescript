@@ -1476,9 +1476,8 @@ const App =()=>{
 export default App;
 ```  
 
-## 20.2 
+## 20.2 Dealing with future values in useState Hook  
 ## App.tsx  
-# Dealing with future values in useState Hook  
 
 ```
 import React, { useState } from "react";
@@ -1513,11 +1512,10 @@ const App = () => {
 export default App;
 ```  
 
-## 20.3  
+## 20.3  Type asertion - without optional chaining operator
 ## App.tsx  
 
 ```
-// type asertion - without optional chaining operator
 import React, { useState } from "react";
 import "./App.css";
 
