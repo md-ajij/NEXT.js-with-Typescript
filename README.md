@@ -1062,7 +1062,7 @@ export default Button;
 ```  
 
 
-# 16.1 onClick Event Type:-  
+# 16. onClick Event Type:-  
 ## App.tsx  
 
 ```
@@ -1241,7 +1241,7 @@ export default NewUser;
 ```  
 
 
-# 18. onSubmit Event Type:-
+# 18. onSubmit Event Type (with Input onChange Event):-
 ## Ajij.tsx
 
   ```
@@ -1339,7 +1339,7 @@ export default NewUser;
  export default NewUser;
 ```  
 
-# 19. Type of useState , onChange and onSubmit Event :-  
+# 19. Type of useState (with onChange and onSubmit Events) :-  
 
   # Ajij.tsx
 
@@ -1358,15 +1358,15 @@ export default NewUser;
 
     const [user, setUser] = useState<NewUserProps>({ name: "", email: "" });
 
-    const handleInputFieldChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const handleInputFieldChange = (e: React.ChangeEvent<HTMLInputElement>) => {
 
-      const fieldName = event.target.name;
+      const fieldName = e.target.name;
 
-      setUser({ ...user, [fieldName]: event.target.value });
+      setUser({ ...user, [fieldName]: e.target.value });
 
     };
 
-    const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
 
       event.preventDefault();
 
