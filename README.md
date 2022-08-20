@@ -1060,11 +1060,12 @@ const Button = (props: ButtonProps) => {
 
 export default Button;
 ```  
+
+
 # 16.1 onClick Event Type:-  
 ## App.tsx  
 
 ```
- 
   import React, { useState } from "react";
 
   const NewUser = () => {
@@ -1107,18 +1108,16 @@ export default Button;
     ```  
     
 
-
-
 # 16. Typing useState Hooks:-  
 ## 16.1
-## App.tsx
+## App.tsx  
+
 ```
 import React, { useState } from "react";
 import "./App.css";
 
-const App = () => {
-  // type is automatically infereed as number
-  const [count, setCount] = useState(0);
+const App =()=>{
+  const [count,setCount] = useState(0);
 
   const handleIncrement = (): void => {
     setCount((count) => count + 1);
@@ -1176,6 +1175,8 @@ const App = () => {
 
 export default App;
 ```  
+
+
 ## 16.3
 ## App.tsx  
 
@@ -1212,4 +1213,5 @@ const App = () => {
 
 export default App;
 ```  
+
 
