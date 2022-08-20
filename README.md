@@ -1106,10 +1106,348 @@ export default Button;
 
 export default NewUser;
 ```  
-    
+# OR  
 
-# 16. Typing useState Hooks:-  
-## 16.1  
+## App.tsx  
+
+```
+  import React,{ useState,MouseEvent } from "react";
+
+  const NewUser = () => {
+       const handleClick =(e: MouseEvent<HTMLButtonElement>)=>{
+           console.log("Hello Click");
+        };
+    
+    return (
+      <div>
+        <form >
+          <div>
+            <label htmlFor="name">
+              Name
+              <input
+                type="text"
+                id="name"
+                name="name"
+                required
+              />
+            </label>
+          </div>
+          <div>
+            <label htmlFor="email">
+              Email
+              <input
+                type="email"
+                id="email"
+                name="email"
+                required
+              />
+            </label>
+          </div>
+          <button type="submit" onClick ={handleClick}>Create User</button>
+        </form>
+      </div>
+      );
+    };
+
+export default NewUser;
+```  
+# 17. Input Field onChange Event  
+# Ajij.tsx  
+
+  ```
+  import React, { useState } from "react";
+
+  const NewUser = () => {
+
+    const [user, setUser] = useState({ name: "", email: "" });
+
+    const handleInputFieldChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+
+      const fieldName = e.target.name;
+
+      setUser({ ...user, [fieldName]: e.target.value });
+
+    };
+    return (
+
+      <div>
+
+        <h2>Create User</h2>
+
+        <form>
+
+          <div>
+
+            <label htmlFor="name">
+
+              Name
+
+              <input
+
+                type="text"
+
+                id="name"
+
+                name="name"
+
+                value={user.name}
+
+                onChange={handleInputFieldChange}
+
+                required
+
+              />
+
+            </label>
+
+          </div>
+
+          <div>
+
+            <label htmlFor="email">
+
+              Email
+
+              <input
+
+                type="email"
+
+                id="email"
+
+                name="email"
+
+                value={user.email}
+
+                onChange={handleInputFieldChange}
+
+                required
+
+              />
+
+            </label>
+
+          </div>
+
+          <button type="submit">Create User</button>
+
+        </form>
+
+      </div>
+
+      );
+
+    };
+ export default NewUser;
+```  
+
+
+# 18. onSubmit Event Type:-
+## Ajij.tsx
+
+  ```
+  import React, { useState } from "react";
+
+  const NewUser = () => {
+
+    const [user, setUser] = useState({ name: "", email: "" });
+
+    const handleInputFieldChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+
+      const fieldName = event.target.name;
+
+      setUser({ ...user, [fieldName]: event.target.value });
+
+    };
+
+    const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+
+      event.preventDefault();
+
+      console.log(user);
+
+    };
+
+    return (
+
+      <div>
+
+        <h2>Create User</h2>
+
+        <form onSubmit={handleSubmit}>
+
+          <div>
+
+            <label htmlFor="name">
+
+              Name
+
+              <input
+
+                type="text"
+
+                id="name"
+
+                name="name"
+
+                value={user.name}
+
+                onChange={handleInputFieldChange}
+
+                required
+
+              />
+
+            </label>
+
+          </div>
+
+          <div>
+
+            <label htmlFor="email">
+
+              Email
+
+              <input
+
+                type="email"
+
+                id="email"
+
+                name="email"
+
+                value={user.email}
+
+                onChange={handleInputFieldChange}
+
+                required
+
+              />
+
+            </label>
+
+          </div>
+
+          <button type="submit">Create User</button>
+
+        </form>
+
+      </div>
+
+      );
+
+    };
+ export default NewUser;
+```  
+
+# 19. Type of useState , onChange and onSubmit Event :-  
+
+  # Ajij.tsx
+
+  ```
+  import React, { useState } from "react";
+
+  type NewUserProps = {
+
+    name: string;
+
+    email: string;
+
+  };
+
+  const NewUser = () => {
+
+    const [user, setUser] = useState<NewUserProps>({ name: "", email: "" });
+
+    const handleInputFieldChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+
+      const fieldName = event.target.name;
+
+      setUser({ ...user, [fieldName]: event.target.value });
+
+    };
+
+    const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+
+      event.preventDefault();
+
+      console.log(user);
+
+    };
+
+    return (
+
+      <div>
+
+        <h2>Create User</h2>
+
+        <form onSubmit={handleSubmit}>
+
+          <div>
+
+            <label htmlFor="name">
+
+              Name
+
+              <input
+
+                type="text"
+
+                id="name"
+
+                name="name"
+
+                value={user.name}
+
+                onChange={handleInputFieldChange}
+
+                required
+
+              />
+
+            </label>
+
+          </div>
+
+          <div>
+
+            <label htmlFor="email">
+
+              Email
+
+              <input
+
+                type="email"
+
+                id="email"
+
+                name="email"
+
+                value={user.email}
+
+                onChange={handleInputFieldChange}
+
+                required
+
+              />
+
+            </label>
+
+          </div>
+
+          <button type="submit">Create User</button>
+
+        </form>
+
+      </div>
+
+      );
+
+    };
+ export default NewUser;
+```  
+
+# 20. Typing useState Hooks:-  
+## 20.1
 ## App.tsx  
 
 ```
@@ -1138,7 +1476,7 @@ const App =()=>{
 export default App;
 ```  
 
-## 16.2  
+## 20.2 
 ## App.tsx  
 # Dealing with future values in useState Hook  
 
@@ -1175,7 +1513,7 @@ const App = () => {
 export default App;
 ```  
 
-## 16.3  
+## 20.3  
 ## App.tsx  
 
 ```
