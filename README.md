@@ -1060,4 +1060,107 @@ const Button = (props: ButtonProps) => {
 
 export default Button;
 ```  
+# 16. Typing useState Hooks:-  
+## 16.1
+## App.tsx
+```
+import React, { useState } from "react";
+import "./App.css";
+
+const App = () => {
+  // type is automatically infereed as number
+  const [count, setCount] = useState(0);
+
+  const handleIncrement = (): void => {
+    setCount((count) => count + 1);
+  };
+
+  const handleDecrement = (): void => {
+    setCount((count) => count - 1);
+  };
+
+  return (
+    <div className="App">
+      <h1>Count : {count}</h1>
+      <button onClick={handleIncrement}>+</button>
+      <button onClick={handleDecrement}>-</button>
+    </div>
+  );
+};
+
+export default App;
+```  
+
+## 16.2
+## App.tsx
+# Dealing with future values in useState Hook
+
+```
+import React, { useState } from "react";
+import "./App.css";
+
+type User = {
+  id: number;
+  name: string;
+};
+
+const App = () => {
+  // const [data, setData] = useState<null | string>(null);
+  const [data, setData] = useState<null | User>(null);
+
+  const handleSetData = () => {
+    // setData("Anisul islam");
+    setData({ id: 101, name: "anisul islam" });
+    console.log(data);
+  };
+
+  return (
+    <div className="App">
+      <h1>UseState Future value</h1>
+      <button onClick={handleSetData}>set data</button>
+      {/* {data && <p>{data}</p>} */}
+    <!-- <p>{data?.id}</p> -->
+    <!-- <p>{data?.name}</p> -->
+    </div>
+  );
+};
+
+export default App;
+```  
+## 16.3
+## App.tsx  
+
+```
+// type asertion - without optional chaining operator
+import React, { useState } from "react";
+import "./App.css";
+
+type User = {
+  id: number;
+  name: string;
+};
+
+const App = () => {
+  // const [data, setData] = useState<null | string>(null);
+  const [data, setData] = useState<User>({} as User);
+
+  const handleSetData = () => {
+    // setData("Anisul islam");
+    setData({ id: 101, name: "anisul islam" });
+    console.log(data);
+  };
+
+  return (
+    <div className="App">
+      <h1>UseState Future value</h1>
+      <button onClick={handleSetData}>set data</button>
+      {/* {data && <p>{data}</p>} */}
+      <p>{data.id}</p>
+      <p>{data.name}</p>
+    </div>
+  );
+};
+
+export default App;
+```  
 
