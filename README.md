@@ -1060,6 +1060,55 @@ const Button = (props: ButtonProps) => {
 
 export default Button;
 ```  
+# 16.1 onClick Event Type:-  
+## App.tsx  
+
+```
+ 
+  import React, { useState } from "react";
+
+  const NewUser = () => {
+       const handleClick =(e: React.MouseEvent<HTMLButtonElement>)=>{
+           console.log("Hello Click");
+        };
+    
+    return (
+      <div>
+        <form >
+          <div>
+            <label htmlFor="name">
+              Name
+              <input
+                type="text"
+                id="name"
+                name="name"
+                required
+              />
+            </label>
+          </div>
+          <div>
+            <label htmlFor="email">
+              Email
+              <input
+                type="email"
+                id="email"
+                name="email"
+                required
+              />
+            </label>
+          </div>
+          <button type="submit" onClick ={handleClick}>Create User</button>
+        </form>
+      </div>
+      );
+    };
+
+    export default NewUser;
+    ```  
+    
+
+
+
 # 16. Typing useState Hooks:-  
 ## 16.1
 ## App.tsx
