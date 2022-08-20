@@ -1018,6 +1018,48 @@ const Card = ({children}: CardProps) => {
 
 export default Card;
 ```  
+# Style Type Props:-
+
+## App.tsx  
+```
+
+// import "./App.css";
+
+import Button from "./components/Button";
+
+function App() {
+  return (
+    <div className="App">
+      <Button
+        styles={{ backgroundColor: "green", padding: "1rem", color: "white" }}
+      />
+    </div>
+  );
+}
+
+export default App;
+```  
+# Button.tsx  
+
+```
+
+// props for styles -> React.CSSProperties
+import React from "react";
+
+type ButtonProps = {
+  styles: React.CSSProperties;
+};
+
+const Button = (props: ButtonProps) => {
+  return (
+      <button style={props.styles}>
+            click me
+      </button>;
+  );
+};
+
+export default Button;
+```  
 
 
 
