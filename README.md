@@ -964,7 +964,8 @@ export default Index;
 ## User.tsx
 
 ```
-// import React from "react";
+// import React from "react";  
+
 import Card from "./Card";
 
 type UserProps = {
@@ -1002,7 +1003,8 @@ export default User;
 # Card.tsx  
 
 ```
-import React from "react";
+// import React from "react";  
+
 type CardProps = {
   children: React.ReactNode;
 };
