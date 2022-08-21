@@ -1550,9 +1550,9 @@ export default NewUser;
 ```  
 
 
-# 21.  Form Action from one Page to another Page:-
+# 21.  Form Action of a Page Ajij.tsx to another Page paySlip.tsx:-
 
-## User.tsx
+## Ajij.tsx
 
 ```
 import { useState } from "react";
@@ -1660,6 +1660,22 @@ export default Ajij;
 ```  
 
 # paySlip.tsx  
+
+
+```
+import {useRouter} from "next/router";
+const PaySlip =() =>{
+  const router = useRouter();
+  const {name,email} = router.query;
+  return (
+    <div>
+      <h1>{name}</h1>
+      <h1>{email}</h1>
+    </div>
+  );
+};
+export default PaySlip;
+```  
 
 
 
