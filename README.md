@@ -1548,3 +1548,120 @@ export default NewUser;
     };
  export default NewUser;
 ```  
+
+
+# 21.  Form Action from one Page to another Page:-
+
+## User.tsx
+
+```
+import { useState } from "react";
+import {useRouter] from "next/router";
+
+const Ajij = ({action = '/PaySlip'}) => {
+  const router = useRouter();
+
+  const [user, setUser] = useState({ name: "", email: "" });
+
+  const handleInputFieldChange = (e) => {
+
+    const fieldName = e.target.name;
+    const fieldValue = e.target.value
+
+    setUser({ ...user, [fieldName]: fieldValue });
+
+  };  
+  
+// const {name,email}= user;  
+
+  const handleSubmit = (e) => {
+
+    e.preventDefault();
+
+    router.push({
+      pathname: action,
+      query: {
+        // name:name,email:email,
+        User:user
+      },
+   });
+
+ };
+
+  return (
+
+    <div>
+
+      <h2>Create User</h2>
+
+      <form onSubmit={handleSubmit}>
+
+        <div>
+
+          <label htmlFor="name">
+
+            Name
+
+            <input
+
+              type="text"
+
+              id="name"
+
+              name="name"
+
+              value={user.name}
+
+              onChange={handleInputFieldChange}
+
+              required
+
+            />
+
+          </label>
+
+        </div>
+
+        <div>
+
+          <label htmlFor="email">
+
+            Email
+
+            <input
+
+              type="email"
+
+              id="email"
+
+              name="email"
+
+              value={user.email}
+
+              onChange={handleInputFieldChange}
+
+              required
+
+            />
+
+          </label>
+
+        </div>
+
+        <button type="submit">Create User</button>
+
+      </form>
+
+    </div>
+
+    );
+};
+export default Ajij;
+```  
+
+# paySlip.tsx  
+
+
+
+
+
