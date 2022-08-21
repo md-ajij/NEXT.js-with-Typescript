@@ -122,7 +122,7 @@ myFunc =(a:number,b:number):string =>{
 
 myFunc(10,5);
 ```  
-# 9. Type of Functional Component in NEXT.JS-WITH-TYPESCRIPT:-  
+# 9.1 Type of Functional Component in NEXT.JS-WITH-TYPESCRIPT:-  
 ## IPost.ts  
 ```
 export interface IPost {
@@ -159,8 +159,57 @@ const AddPost: React.FC<Props> = ({ savePost }) => {
 export defoult AddPost;
 ```  
 
+# 9.2 Functional Components:-  
+## IPost.tsx
+```
+interface IPost {
 
-# Functional Components:-  
+  id: number
+
+  title: string
+
+  body: string
+
+}
+```  
+
+## AddPost.tsx  
+
+```
+
+import * as React from 'react';  
+import React, {useState,FormEvent,FC} from 'react';
+
+import { IPost } from '../types';
+
+type Props = {
+
+  savePost: (e: FormEvent, formData: IPost) => void
+
+}
+
+const AddPost: React.FunctionComponent<Props> = ({ savePost }) => {
+
+  const [formData, setFormData] = useState<IPost>()
+
+  const handleFormInputFiled = (e: FormEvent<HTMLInputElement>): void => {
+
+    setFormData({
+
+      ...formData,
+
+      [e.target.name]: e.target.value,
+
+    })
+
+  }
+
+export defoult AddPost;
+
+```  
+
+
+# 9.3 Functional Components:-  
 
 // AddPost.tsx  
 
@@ -177,7 +226,7 @@ type Props = {
 
 }
 
-const AddPost: FC<Props> = ({ savePost }) => {
+const AddPost: React.FC<Props> = ({ savePost }) => {
 
   const [formData, setFormData] = useState<IPost>()
 
