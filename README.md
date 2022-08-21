@@ -1168,7 +1168,7 @@ export default App;
 ## App.tsx  
 
 ```
-  import React, { useState } from "react";
+  //import React from "react";
 
   const NewUser = () => {
        const handleClick =(e: React.MouseEvent<HTMLButtonElement>)=>{
@@ -1213,7 +1213,7 @@ export default NewUser;
 ## App.tsx  
 
 ```
-  import React,{ useState,MouseEvent } from "react";
+  import React,{ MouseEvent } from "react";
 
   const NewUser = () => {
        const handleClick =(e: MouseEvent<HTMLButtonElement>)=>{
@@ -1260,8 +1260,9 @@ export default NewUser;
   import React, { useState } from "react";
 
   const NewUser = () => {
-
-    const [user, setUser] = useState({ name: "", email: "" });
+  
+    const [user, setUser] = useState<{name:string;email:number}>({ name: "", email: "" });
+   // const [user, setUser] = useState({ name: "", email: "" });
 
     const handleInputFieldChange = (e: React.ChangeEvent<HTMLInputElement>) => {
 
@@ -1351,8 +1352,9 @@ export default NewUser;
   import React, { useState } from "react";
 
   const NewUser = () => {
+      const [user, setUser] = useState<{name:string;email:number}>({ name: "", email: "" });
 
-    const [user, setUser] = useState({ name: "", email: "" });
+    //const [user, setUser] = useState({ name: "", email: "" });
 
     const handleInputFieldChange = (event: React.ChangeEvent<HTMLInputElement>) => {
 
