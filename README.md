@@ -1471,7 +1471,7 @@ export default NewUser;
 
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
 
-      event.preventDefault();
+      e.preventDefault();
 
       console.log(user);
 
@@ -1557,13 +1557,20 @@ export default NewUser;
 ```
 import { useState } from "react";
 import {useRouter] from "next/router";
+type NewUserProps = {
+
+    name: string;
+
+    age: number;
+
+  };
 
 const Ajij = ({action = '/PaySlip'}) => {
   const router = useRouter();
 
-  const [user, setUser] = useState({ name: "", email: "" });
+  const [user, setUser] = useState<NewUserProps>({ name: "", age: "" });
 
-  const handleInputFieldChange = (e) => {
+  const handleInputFieldChange = (e: React.ChangeEvent<HTMLInputElement>) => {
 
     const fieldName = e.target.name;
     const fieldValue = e.target.value
@@ -1572,16 +1579,16 @@ const Ajij = ({action = '/PaySlip'}) => {
 
   };  
   
-// const {name,email}= user;  
+// const {name,age}= user;  
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
 
     e.preventDefault();
 
     router.push({
       pathname: action,
       query: {
-        // name:name,email:email,
+        // name:name, age:age,
         User:user
       },
    });
@@ -1624,19 +1631,19 @@ const Ajij = ({action = '/PaySlip'}) => {
 
         <div>
 
-          <label htmlFor="email">
+          <label htmlFor="age">
 
-            Email
+            Age
 
             <input
 
-              type="email"
+              type="age"
 
-              id="email"
+              id="age"
 
-              name="email"
+              name="age"
 
-              value={user.email}
+              value={user.age}
 
               onChange={handleInputFieldChange}
 
@@ -1666,11 +1673,11 @@ export default Ajij;
 import {useRouter} from "next/router";
 const PaySlip =() =>{
   const router = useRouter();
-  const {name,email} = router.query;
+  const {name,age} = router.query;
   return (
     <div>
       <h1>{name}</h1>
-      <h1>{email}</h1>
+      <h1>{age}</h1>
     </div>
   );
 };
