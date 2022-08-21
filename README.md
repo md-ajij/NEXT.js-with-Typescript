@@ -1061,8 +1061,110 @@ const Button = (props: ButtonProps) => {
 export default Button;
 ```  
 
+# 16. Typing useState Hooks:-  
+## 16.1
+## App.tsx  
 
-# 16. onClick Event Type:-  
+```
+import React, { useState } from "react";
+import "./App.css";
+
+const App =()=>{
+  const [count,setCount] = useState(0);
+
+  const handleIncrement = (): void => {
+    setCount((count) => count + 1);
+  };
+
+  const handleDecrement = (): void => {
+    setCount((count) => count - 1);
+  };
+
+  return (
+    <div className="App">
+      <h1>Count : {count}</h1>
+      <button onClick={handleIncrement}>+</button>
+      <button onClick={handleDecrement}>-</button>
+    </div>
+  );
+};
+export default App;
+```  
+
+## 16.2 Dealing with future values in useState Hook  
+## App.tsx  
+
+```
+import React, { useState } from "react";
+import "./App.css";
+
+type User = {
+  id: number;
+  name: string;
+};
+
+const App = () => {
+  // const [data, setData] = useState<null | string>(null);
+  const [data, setData] = useState<null | User>(null);
+
+  const handleSetData = () => {
+    // setData("Md Naj");
+    setData({ id: 1, name: "Md Naj" });
+    console.log(data);
+  };
+
+  return (
+    <div className="App">
+      <h1>UseState Future value</h1>
+      <button onClick={handleSetData}>set data</button>
+      {/* {data && <p>{data}</p>} */}
+    <!-- <p>{data?.id}</p> -->
+    <!-- <p>{data?.name}</p> -->
+    </div>
+  );
+};
+
+export default App;
+```  
+
+## 16.3  Type asertion - without optional chaining operator
+## App.tsx  
+
+```
+import React, { useState } from "react";
+import "./App.css";
+
+type User = {
+  id: number;
+  name: string;
+};
+
+const App = () => {
+  // const [data, setData] = useState<null | string>(null);
+  const [data, setData] = useState<User>({} as User);
+
+  const handleSetData = () => {
+    // setData("Md Naj");
+    setData({ id: 1, name: "Md Naj" });
+    console.log(data);
+  };
+
+  return (
+    <div className="App">
+      <h1>UseState Future value</h1>
+      <button onClick={handleSetData}>set data</button>
+      {/* {data && <p>{data}</p>} */}
+      <p>{data.id}</p>
+      <p>{data.name}</p>
+    </div>
+  );
+};
+
+export default App;
+```  
+
+
+# 17. onClick Event Type:-  
 ## App.tsx  
 
 ```
@@ -1151,7 +1253,7 @@ export default NewUser;
 
 export default NewUser;
 ```  
-# 17. Input Field onChange Event  
+# 18. Input Field onChange Event  
 # Ajij.tsx  
 
   ```
@@ -1164,8 +1266,9 @@ export default NewUser;
     const handleInputFieldChange = (e: React.ChangeEvent<HTMLInputElement>) => {
 
       const fieldName = e.target.name;
+      const fieldValue = e.target.value;
 
-      setUser({ ...user, [fieldName]: e.target.value });
+      setUser({ ...user, [fieldName]: fieldValue });
 
     };
     return (
@@ -1241,7 +1344,7 @@ export default NewUser;
 ```  
 
 
-# 18. onSubmit Event Type (with Input onChange Event):-
+# 19. onSubmit Event Type, Input onChange Event:-
 ## Ajij.tsx
 
   ```
@@ -1339,7 +1442,7 @@ export default NewUser;
  export default NewUser;
 ```  
 
-# 19. Type of useState (with onChange and onSubmit Events) :-  
+# 20. Type of useState , onChange and onSubmit Events :-  
 
   # Ajij.tsx
 
@@ -1444,106 +1547,4 @@ export default NewUser;
 
     };
  export default NewUser;
-```  
-
-# 20. Typing useState Hooks:-  
-## 20.1
-## App.tsx  
-
-```
-import React, { useState } from "react";
-import "./App.css";
-
-const App =()=>{
-  const [count,setCount] = useState(0);
-
-  const handleIncrement = (): void => {
-    setCount((count) => count + 1);
-  };
-
-  const handleDecrement = (): void => {
-    setCount((count) => count - 1);
-  };
-
-  return (
-    <div className="App">
-      <h1>Count : {count}</h1>
-      <button onClick={handleIncrement}>+</button>
-      <button onClick={handleDecrement}>-</button>
-    </div>
-  );
-};
-export default App;
-```  
-
-## 20.2 Dealing with future values in useState Hook  
-## App.tsx  
-
-```
-import React, { useState } from "react";
-import "./App.css";
-
-type User = {
-  id: number;
-  name: string;
-};
-
-const App = () => {
-  // const [data, setData] = useState<null | string>(null);
-  const [data, setData] = useState<null | User>(null);
-
-  const handleSetData = () => {
-    // setData("Anisul islam");
-    setData({ id: 101, name: "anisul islam" });
-    console.log(data);
-  };
-
-  return (
-    <div className="App">
-      <h1>UseState Future value</h1>
-      <button onClick={handleSetData}>set data</button>
-      {/* {data && <p>{data}</p>} */}
-    <!-- <p>{data?.id}</p> -->
-    <!-- <p>{data?.name}</p> -->
-    </div>
-  );
-};
-
-export default App;
-```  
-
-## 20.3  Type asertion - without optional chaining operator
-## App.tsx  
-
-```
-import React, { useState } from "react";
-import "./App.css";
-
-type User = {
-  id: number;
-  name: string;
-};
-
-const App = () => {
-  // const [data, setData] = useState<null | string>(null);
-  const [data, setData] = useState<User>({} as User);
-
-  const handleSetData = () => {
-    // setData("Anisul islam");
-    setData({ id: 101, name: "anisul islam" });
-    console.log(data);
-  };
-
-  return (
-    <div className="App">
-      <h1>UseState Future value</h1>
-      <button onClick={handleSetData}>set data</button>
-      {/* {data && <p>{data}</p>} */}
-      <p>{data.id}</p>
-      <p>{data.name}</p>
-    </div>
-  );
-};
-
-export default App;
 ```  
