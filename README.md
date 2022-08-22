@@ -122,6 +122,60 @@ myFunc =(a:number,b:number):string =>{
 
 myFunc(10,5);
 ```  
+# 9.0 Type of Functional Component in NEXT.JS-WITH-TYPESCRIPT:-  
+```
+export 
+```  
+# Type of Functional Components:-  
+## IPost.tsx  
+
+```
+export interface IPost {
+
+notes: {
+  id: number
+
+  title: string
+
+  body: string
+
+}
+}
+```  
+# Or  
+
+```
+export type IPost = {
+
+notes: {
+  id: number
+
+  title: string
+
+  body: string
+
+}
+}
+```  
+
+# AddPost.tsx  
+```
+import * aa React from 'react';
+14impoet IPost from '../types
+// const AddPost: React.FunctionComponent<type of Props of FC> = ({ notes }) => {
+const AddPost: React.FC<IPost> = ({ notes }) => {
+
+  const [formData, setFormData] = React.useState<IPost>()
+
+  const handleFormInputFiled = (e: React.FormEvent<HTMLInputElement>): void => {
+    setFormData({
+      ...formData,
+      [e.currentTarget.id]: e.currentTarget.value,
+    })
+  }
+
+export defoult AddPost;
+```  
 # 9.1 Type of Functional Component in NEXT.JS-WITH-TYPESCRIPT:-  
 ## IPost.ts  
 ```
@@ -211,7 +265,23 @@ export defoult AddPost;
 
 # 9.3 Functional Components:-  
 
-// AddPost.tsx  
+## IPost.tsx
+
+```
+
+interface IPost {
+
+  id: number
+
+  title: string
+
+  body: string
+
+}
+
+```  
+
+## AddPost.tsx  
 
 ```
 
