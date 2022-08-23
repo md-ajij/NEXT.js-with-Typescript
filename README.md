@@ -1193,8 +1193,9 @@ const Button = (props: ButtonProps) => {
 export default Button;
 ```  
 
-# 16. Typing useState Hooks:-  
-## 16.1
+# 16. Hook type:-  
+
+## 16.1 useState Hooks's Type:-  
 ## App.tsx  
 
 ```
@@ -1295,7 +1296,7 @@ const App = () => {
 export default App;
 ```  
 
-# 17. useRef Hook(to collect input value by clicking a button):-  
+# 16.4. useRef Hook (to collect input value by clicking a button):-  
 
 ## App.tsx  
 
