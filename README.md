@@ -122,10 +122,8 @@ myFunc =(a:number,b:number):string =>{
 
 myFunc(10,5);
 ```  
-# 9.0 Type of Functional Component in NEXT.JS-WITH-TYPESCRIPT:-  
-```
-export 
-```  
+# 9.0 Type of Functional Component in NEXT.JS-WITH-TYPESCRIPT:-    
+
 # Type of Functional Components:-  
 ## IPost.tsx  
 
@@ -162,16 +160,31 @@ notes: {
 ```
 import * aa React from 'react';
 14impoet IPost from '../types
-// const AddPost: React.FunctionComponent<type of Props of FC> = ({ notes }) => {
+// const AddPost: React.FunctionComponent<type of Props of FC> = (props) => {
 const AddPost: React.FC<IPost> = ({ notes }) => {
 
   const [formData, setFormData] = React.useState<IPost>()
 
   const handleFormInputFiled = (e: React.FormEvent<HTMLInputElement>): void => {
-    setFormData({
-      ...formData,
-      [e.currentTarget.id]: e.currentTarget.value,
-    })
+    setFormData({...formData,[e.currentTarget.id]: e.currentTarget.value})
+  }
+    return (
+      <div>
+         <input type='text'
+               name='title'
+               value ={formData}
+               onChange ={handleFormInputField}
+               placeholdee ='Enter your title'
+               required
+               minlength={4}
+               maxlength={50}
+               
+             
+             
+         />
+      <div/>
+    
+    );
   }
 
 export defoult AddPost;
@@ -1281,6 +1294,67 @@ const App = () => {
 
 export default App;
 ```  
+
+# 17. useRef Hook(to collect input value by clicking a button):-  
+
+## App.tsx  
+
+```
+import React, { useRef } from "react";
+import "./App.css";
+
+const App = () => {
+  const inputRef =useRef<null | HTMLInputElement>(null);
+  const [datas, setData] = useState<string[]>([]);
+
+  const addData = () => {
+    const todo =inputRef.current?.value;
+    setData([...datas,todo])
+  };
+  
+  /***
+     const addData = () => {
+     
+          if(inputRef.current){
+             const todo =inputRef.current.value;
+             setData({...datas,todo})
+          };
+    };
+  
+  
+  
+  ***/
+
+  return (
+    <div className="App">
+      <input 
+          ref={inputRef}
+          type='text'
+          placeholder='Enter your name'
+      
+      />
+      
+      <button onClick={addData}>Add Data</button>
+      <ul>
+         {
+            datas.map((data)=>{
+                return(
+                   <li key={data}>{data}</li>
+                )
+            });
+         
+         
+         }
+      
+      </ul>
+      
+    </div>
+  );
+};
+
+export default App;
+```  
+
 
 
 # 17. onClick Event Type:-  
