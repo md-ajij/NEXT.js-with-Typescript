@@ -380,6 +380,7 @@ export default Home;
 ```  
 
 # OR  
+## index.tsx
 
 ```
 import React, {useState} from "react";
@@ -416,7 +417,8 @@ const Home =()=>{
 export default Home;
 ```  
 
-# Or 
+# Or  
+
 ## Note.tsx  
 
 ```
@@ -431,6 +433,7 @@ export interface Note {
 }
 
 ```  
+## indwx.tsx
 
 ```
 import React, {useState} from "react";
@@ -458,6 +461,67 @@ const Home =()=>{
 
 };
 export default Home;
+```  
+# 12. Type of variables , constants , Function
+
+## Note.tsx  
+
+```
+export interface Note {
+  
+      id:string,
+      title: string,
+      text: string, 
+      color: string,
+      date: string,
+
+}
+
+```  
+
+## index.tsx
+
+```
+import React, {useState} from "react";
+import Note from "./components/Note";
+import User from "./components/User";
+
+const Home =()=>{
+   const [note,setNote]=useState<Note[]>([{
+           id: (new Date).toString(),
+           title:"This is Title",
+           text:"Lorem100",
+           coror:"#09re54",
+           date: (new Date).toString(),
+       )}]);
+   
+   return (
+      <div>
+         <User note = {note}>
+      </div>
+   
+   );
+
+};
+export default Home;
+```  
+
+# User.tsx  
+```
+const User: React.FunctionComponent<>=({note})=>{
+   return(
+      <div>
+         <h1>{note.id}</h1>
+         <h1>{note.title}</h1>
+         <h1>{note.text}</h1>
+         <h1 className={note.color}> Hey who are you ?</h1>
+         <h1>{note.date}</h1>
+      
+      </div>
+     
+    
+   );
+};
 ```  
 
 
