@@ -24,7 +24,24 @@ npm run dev
 ```
 yarn dev
 ```  
+# 1.1 To get Functional Component with Typescript snippet  
+```
+tsrsfc  
+```  
 
+```
+// home.tsx  
+import * as React from "react";
+
+interface IAppProps {
+  
+}
+const App: React.FunctionComponent<IAppProps> =(props)=>{
+  return;
+};
+export default App;
+
+```  
 
 # 2. Type of parameters of an Arrow function(void) that return nothing  
 ```
