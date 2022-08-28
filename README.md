@@ -24,7 +24,7 @@ npm run dev
 ```
 yarn dev
 ```  
-# 1.1 To get Functional Component with Typescript snippet  
+# 2. To get Functional Component with Typescript snippet  
 ```
 tsrsfc  
 ```  
@@ -43,7 +43,7 @@ export default App;
 
 ```  
 
-# 2. Type of parameters of an Arrow function(void) that return nothing  
+# 3. Type of parameters of an Arrow function(void) that return void or nothing  
 ```
 const myFunc=(a:number,b:number):void=>{
    consol.log(a+b);
@@ -51,7 +51,7 @@ const myFunc=(a:number,b:number):void=>{
 
 myFunc(10,5);
 ```  
-# 3. Type of parameters of a Arrow function that return a sting  
+# 4. Type of parameters of an Arrow function that return a sting  
 
 ```
 
@@ -64,7 +64,7 @@ const myFunc=(a:number,b:number):string =>{
 myFunc(10,5);
 ```  
 
-# 4. Optional Type of a variable:- 
+# 5. Optional Type of a variable:- 
 
 ```
 
@@ -82,7 +82,7 @@ myFunc(10,5);
 
 
 
-# 5. Normal function(void) that return nothing  
+# 6. Normal function that return void or nothing  
 
 ```
 
@@ -95,7 +95,7 @@ function myFunc(a:number,b:number):void {
 myFunc(10,5);
 
 ```  
-# 6. Normal function(sting) that return a sting  
+# 7. Normal function that return a sting  
 
 ```
 
@@ -110,7 +110,7 @@ function myFunc(a:number,b:number):string {
 myFunc(10,5);
 
 ```  
-# 7. Type of an Arrow function(void) that return nothing  
+# 8. Type of an Arrow function that return void or nothing  
 
 ```
 let myFunc:Function;
@@ -125,7 +125,7 @@ myFunc(10,5);
 
 ```  
 
-# 8. Type of Arrow function that return a string  
+# 9. Type of Arrow function that return a string  
 
 ```
 let myFunc:Function;
@@ -139,9 +139,10 @@ myFunc =(a:number,b:number):string =>{
 
 myFunc(10,5);
 ```  
-# 9.0 Type of Functional Component in NEXT.JS-WITH-TYPESCRIPT:-    
+# 10.0 Type of Functional Component in NEXT.JS-WITH-TYPESCRIPT:-    
 
 # Type of Functional Components:-  
+
 ## IPost.tsx  
 
 ```
@@ -206,7 +207,7 @@ const AddPost: React.FC<IPost> = ({ notes }) => {
 
 export defoult AddPost;
 ```  
-# 9.1 Type of Functional Component in NEXT.JS-WITH-TYPESCRIPT:-  
+# 10.1 Type of Functional Component in NEXT.JS-WITH-TYPESCRIPT:-  
 ## IPost.ts  
 ```
 export interface IPost {
@@ -240,7 +241,7 @@ const AddPost: React.FC<Props> = ({ savePost }) => {
 export defoult AddPost;
 ```  
 
-# 9.2 Functional Components:-  
+# 10.2 Functional Components:-  
 ## IPost.tsx
 ```
 interface IPost {
@@ -290,7 +291,7 @@ export defoult AddPost;
 ```  
 
 
-# 9.3 Functional Components:-  
+# 10.3 Functional Components:-  
 
 ## IPost.tsx
 
@@ -342,7 +343,7 @@ const AddPost: React.FC<Props> = ({ savePost }) => {
 export defoult AddPost;
 
 ```  
-# 10. Type of variables & constants  
+# 11. Type of variables & constants  
 ## index.tsx  
 ```
 import React, {useState} from "react";
@@ -460,7 +461,7 @@ export default Home;
 ```  
 
 
-# 10. Type of event :-
+# 12. Type of event :-
 
   <!-- click event: event: React.MouseEvent<HTMLButtonElement>
 
@@ -578,7 +579,7 @@ export default Home;
  export default NewUser;
 ```  
 
-# 11. typescript for Props - built in types  
+# 13. typescript for Props - built in types  
 - built in types example -> string, number, boolean
 - extension .ts and component extension is .tsx not .js or .jsx  
 
@@ -768,7 +769,7 @@ const handleClick = (): void => {
 };
 ```  
 
-# 12.typescript for Props - User defined types  
+# 14.typescript for Props - User defined types  
 ---  
 
 - Object
@@ -779,7 +780,7 @@ const handleClick = (): void => {
 - any
 - custom type  
 
-# 12.1 object props  
+# 14.1 object props  
 
 ## App.tsx
 
@@ -840,7 +841,7 @@ const User = ({ user }: UserProps) => {
 export default User;
 ```  
 
-# 12.2 Array  
+# 14.2 Array  
 # App.tsx  
 
 ```
@@ -880,7 +881,7 @@ export default User;
 
 
 
-# 12.3 Array in Object  
+# 14.3 Array in Object  
 # App.tsx  
 
 ```
@@ -937,7 +938,7 @@ export default User;
 
 
 
-# 12.4 Array of Object:-  
+# 14.4 Array of Object:-  
 
 ## App.tsx  
 
@@ -1010,7 +1011,7 @@ const User = ({ user }: UserProps) => {
 export default User;
 
 ```  
-# 12.5 Array of Object:-  
+# 14.5 Array of Object:-  
 ## App.tsx  
 
 ```
@@ -1088,7 +1089,7 @@ export default User;
 ```  
 
 
-# 12.6 Object:-  
+# 14.6 Object:-  
 
 ## App.tsx  
 
@@ -1161,7 +1162,7 @@ export default User;
 
 ```  
 ---  
-# 13. Union of Types:-  
+# 15. Union of Types:-  
 
 ## App.tsx  
 ```
@@ -1199,7 +1200,7 @@ const Message = (props: MessageProps) => {
 
 export default Message;
 ```  
-# 14. Children Props
+# 16. Children Props
 # index.js  
 
 ```
@@ -1282,7 +1283,7 @@ const Card = ({children}: CardProps) => {
 
 export default Card;
 ```  
-# 15. Style Type Props:-
+# 17. Style Type Props:-
 
 ## App.tsx  
 ```
@@ -1325,9 +1326,9 @@ const Button = (props: ButtonProps) => {
 export default Button;
 ```  
 
-# 16. Hook type:-  
+# 18. Hook type:-  
 
-## 16.1 useState Hooks's Type:-  
+## 18.1 useState Hooks's Type:-  
 ## App.tsx  
 
 ```
@@ -1356,7 +1357,7 @@ const App =()=>{
 export default App;
 ```  
 
-## 16.2 Dealing with future values in useState Hook  
+## 18.2 Dealing with future values in useState Hook  
 ## App.tsx  
 
 ```
@@ -1392,7 +1393,7 @@ const App = () => {
 export default App;
 ```  
 
-## 16.3  Type asertion - without optional chaining operator
+## 18.3  Type asertion - without optional chaining operator
 ## App.tsx  
 
 ```
@@ -1428,7 +1429,7 @@ const App = () => {
 export default App;
 ```  
 
-# 16.4. useRef Hook (to collect input value by clicking a button):-  
+# 18.4. useRef Hook (to collect input value by clicking a button):-  
 
 ## App.tsx  
 
@@ -1490,7 +1491,7 @@ export default App;
 
 
 
-# 17. onClick Event Type:-  
+# 19. onClick Event Type:-  
 ## App.tsx  
 
 ```
@@ -1579,7 +1580,7 @@ export default NewUser;
 
 export default NewUser;
 ```  
-# 18. Input Field onChange Event  
+# 20. Input Field onChange Event  
 # Ajij.tsx  
 
   ```
@@ -1671,7 +1672,7 @@ export default NewUser;
 ```  
 
 
-# 19. onSubmit Event Type, Input onChange Event:-
+# 21. onSubmit Event Type, Input onChange Event:-
 ## Ajij.tsx
 
   ```
@@ -1770,7 +1771,7 @@ export default NewUser;
  export default NewUser;
 ```  
 
-# 20. Type of useState , onChange and onSubmit Events :-  
+# 22. Type of useState , onChange and onSubmit Events :-  
 
   # Ajij.tsx
 
@@ -1878,7 +1879,7 @@ export default NewUser;
 ```  
 
 
-# 21.  Form Action of a Page Ajij.tsx to another Page paySlip.tsx:-
+# 23.  Form Action of a Page Ajij.tsx to another Page paySlip.tsx:-
 
 ## Ajij.tsx
 
