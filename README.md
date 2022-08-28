@@ -22,11 +22,11 @@ npm run dev
 ```  
 ## or  
 ```
-yearn dev
+yarn dev
 ```  
 
 
-# 2. Type of parameters of a Arrow function(void) that return nothing  
+# 2. Type of parameters of an Arrow function(void) that return nothing  
 ```
 const myFunc=(a:number,b:number):void=>{
    consol.log(a+b);
@@ -93,7 +93,7 @@ function myFunc(a:number,b:number):string {
 myFunc(10,5);
 
 ```  
-# 7. Type of  Arrow function(void) that return nothing  
+# 7. Type of an Arrow function(void) that return nothing  
 
 ```
 let myFunc:Function;
@@ -108,7 +108,7 @@ myFunc(10,5);
 
 ```  
 
-# 8. Type of Arrow function(sting) that return a sting  
+# 8. Type of Arrow function that return a string  
 
 ```
 let myFunc:Function;
@@ -158,8 +158,8 @@ notes: {
 
 # AddPost.tsx  
 ```
-import * aa React from 'react';
-14impoet IPost from '../types
+import * aa React from 'react';  
+impoet IPost from '../types
 // const AddPost: React.FunctionComponent<type of Props of FC> = (props) => {
 const AddPost: React.FC<IPost> = ({ notes }) => {
 
@@ -217,10 +217,7 @@ const AddPost: React.FC<Props> = ({ savePost }) => {
   const [formData, setFormData] = React.useState<IPost>()
 
   const handleFormInputFiled = (e: React.FormEvent<HTMLInputElement>): void => {
-    setFormData({
-      ...formData,
-      [e.currentTarget.id]: e.currentTarget.value,
-    })
+    setFormData({...formData,[e.currentTarget.id]: e.currentTarget.value,})
   }
 
 export defoult AddPost;
