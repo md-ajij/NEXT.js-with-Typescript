@@ -589,9 +589,32 @@ export default Home;
 
 # Version-1  
 
-## User.tsx 
+## App.tsx
 
 
+```
+// import React from "react";
+// import "./App.css";
+
+import User from "./components/User";
+
+function App() {
+  return (
+    <div className="App">
+      <h1>User Management App</h1>
+      <User name="Md Naj"
+            email="mdnaj@gmail.com"
+            age={32}
+            isRegistered={true}
+      />
+    </div>
+  );
+}
+
+export default App;
+```  
+
+## User.tsx  
 ```
 // import React from "react";
 
@@ -611,8 +634,12 @@ export default User;
 ```  
 
 
-## App.tsx
 
+<hr />
+
+# Version -2  
+
+## App.tsx
 
 ```
 // import React from "react";
@@ -630,15 +657,17 @@ function App() {
         age={32}
         isRegistered={true}
       />
+      <User   name="Md Saju"
+              email="mdsaju@gmail.com"
+              age={31}
+              isRegistered={false}
+      />
     </div>
   );
 }
 
 export default App;
 ```  
-<hr />
-
-# Version -2
 
 
 ## User.tsx
@@ -670,6 +699,10 @@ export default User;
 
 ```  
 
+
+
+
+# Version-3  
 ## App.tsx
 
 
@@ -690,10 +723,10 @@ function App() {
         isRegistered={true}
       />
       <User
-        name="Md Saju"
-        email="mdsaju@gmail.com"
-        age={31}
-        isRegistered={false}
+           name="Md Saju"
+           email="mdsaju@gmail.com"
+           age={31}
+           isRegistered={false}
       />
     </div>
   );
@@ -703,7 +736,6 @@ export default App;
 ```  
 
 
-# Version-3
  ## User.tsx  
  
  ```
@@ -726,14 +758,10 @@ const User = ({ name, email, age, isRegistered }: UserProps) => {
 };
 export default User;
 ```  
-
-## App.tsx
-
+# Version-4   
+## App.tsx  
 
 ```
-// import React from "react";
-// import "./App.css";
-
 import User from "./components/User";
 
 function App() {
@@ -747,10 +775,10 @@ function App() {
         isRegistered={true}
       />
       <User
-        name="Md Saju"
-        email="mdsaju@gmail.com"
-        age={31}
-        isRegistered={false}
+           name="Md Saju"
+           email="mdsaju@gmail.com"
+           age={31}
+           isRegistered={false}
       />
     </div>
   );
@@ -759,6 +787,29 @@ function App() {
 export default App;
 ```  
 
+
+ ## User.tsx  
+ 
+ ```
+//import React from "react";
+type UserProps = {
+  name: string;
+  email: string;
+  age: number;
+  isRegistered: boolean;
+};
+const User: FunctionComponent<UserProps>= ({ name, email, age, isRegistered }) => {
+  return (
+    <div style={{ border: "1px solid", margin: "1rem" }}>
+      <h2>{name}</h2>
+      <p>{email}</p>
+      <p>{age} years old</p>
+      {isRegistered ? <p>Registered Student</p> : <p>Unregistered Student</p>}
+    </div>
+  );
+};
+export default User;
+```  
 
 
 # Return void by a Function 
