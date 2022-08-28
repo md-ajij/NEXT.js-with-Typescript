@@ -325,6 +325,124 @@ const AddPost: React.FC<Props> = ({ savePost }) => {
 export defoult AddPost;
 
 ```  
+# 10. Type of variables & constants  
+## index.tsx  
+```
+import React, {useState} from "react";
+const Home =()=>{
+   const [note,setNote]=useState<{
+      id:string,
+      title: string,
+      text: string, 
+      color: string,
+      date: string,
+   }[]>([{
+           id: (new Date).toString(),
+           title:"This is Title",
+           text:"Lorem100",
+           coror:"#09re54",
+           date: (new Date).toString(),
+       )}]);
+   
+   return (
+      <div>
+         <h1> {note.id}</h1>
+         <h1> {note.title}</h1>
+         <h1> {note.text}</h1>
+         <h1> {note.color}</h1>
+         <h1> {note.date}</h1>
+      </div>
+   
+   );
+
+};
+export default Home;
+
+
+```  
+
+# OR  
+
+```
+import React, {useState} from "react";
+interface Note {
+  
+      id:string,
+      title: string,
+      text: string, 
+      color: string,
+      date: string,
+
+}
+const Home =()=>{
+   const [note,setNote]=useState<Note[]>([{
+           id: (new Date).toString(),
+           title:"This is Title",
+           text:"Lorem100",
+           coror:"#09re54",
+           date: (new Date).toString(),
+       )}]);
+   
+   return (
+      <div>
+         <h1> {note.id}</h1>
+         <h1> {note.title}</h1>
+         <h1> {note.text}</h1>
+         <h1> {note.color}</h1>
+         <h1> {note.date}</h1>
+      </div>
+   
+   );
+
+};
+export default Home;
+```  
+
+# Or 
+## Note.tsx  
+
+```
+export interface Note {
+  
+      id:string,
+      title: string,
+      text: string, 
+      color: string,
+      date: string,
+
+}
+
+```  
+
+```
+import React, {useState} from "react";
+import Note from "./components/Note";
+
+const Home =()=>{
+   const [note,setNote]=useState<Note[]>([{
+           id: (new Date).toString(),
+           title:"This is Title",
+           text:"Lorem100",
+           coror:"#09re54",
+           date: (new Date).toString(),
+       )}]);
+   
+   return (
+      <div>
+         <h1> {note.id}</h1>
+         <h1> {note.title}</h1>
+         <h1> {note.text}</h1>
+         <h1> {note.color}</h1>
+         <h1> {note.date}</h1>
+      </div>
+   
+   );
+
+};
+export default Home;
+```  
+
+
 # 10. Type of event :-
 
   <!-- click event: event: React.MouseEvent<HTMLButtonElement>
