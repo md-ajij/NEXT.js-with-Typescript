@@ -433,7 +433,7 @@ export interface Note {
 }
 
 ```  
-## indwx.tsx
+## index.tsx
 
 ```
 import React, {useState} from "react";
@@ -483,21 +483,21 @@ export interface Note {
 
 ```
 import React, {useState} from "react";
-import Note from "./components/Note";
+import { Note } from "./components/Note";
 import User from "./components/User";
 
 const Home =()=>{
-   const [note,setNote]=useState<Note[]>([{
+   const [notes,setNote]=useState<Note[]>([{
            id: (new Date).toString(),
            title:"This is Title",
            text:"Lorem100",
-           coror:"#09re54",
+           coror:"#09ac54",
            date: (new Date).toString(),
        )}]);
    
    return (
       <div>
-         <User note = {note}>
+         <User note = {notes}>
       </div>
    
    );
@@ -508,7 +508,10 @@ export default Home;
 
 # User.tsx  
 ```
-const User: React.FunctionComponent<>=({note})=>{
+interface IUserProps {
+   notes: Note[];
+};
+const User: React.FunctionComponent<IUserProps>=({notes})=>{
    return(
       <div>
          <h1>{note.id}</h1>
@@ -696,6 +699,132 @@ const User = (props: {name:string;email: string; age: number;isRegistered: boole
 };
 export default User;
 ```  
+# OR  
+## App.tsx  
+```
+import User from "./components/User";
+
+function App() {
+  return (
+    <div className="App">
+      <h1>User Management App</h1>
+      <User name="Md Naj"
+            email="mdnaj@gmail.com"
+            age={32}
+            isRegistered={true}
+      />
+    </div>
+  );
+}
+
+export default App;
+```  
+
+## User.tsx  
+```
+interface IUserProps {
+   name:string;
+   email: string;
+   age: number;
+   isRegistered: boolean;
+}
+const User = (props: IUserProps)=>{
+  return (
+    <div style={{ border: "1px solid", margin: "1rem" }}>
+      <h2>{props.name}</h2>
+      <p>{props.email}</p>
+      <p>{props.age} years old</p>
+      {props.isRegistered ? (<p>Registered Student</p>) : (<p>Unregistered Student</p>
+      )}
+    </div>
+  );
+};
+export default User;
+```  
+# OR  
+## App.tsx  
+```
+import User from "./components/User";
+
+function App() {
+  return (
+    <div className="App">
+      <h1>User Management App</h1>
+      <User name="Md Naj"
+            email="mdnaj@gmail.com"
+            age={32}
+            isRegistered={true}
+      />
+    </div>
+  );
+}
+
+export default App;
+```  
+
+## User.tsx  
+```
+import React from "react";
+interface IUserProps {
+   name:string;
+   email: string;
+   age: number;
+   isRegistered: boolean;
+}
+const User: React.FunctionComponent<IUserProps> = (props)=>{
+  return (
+    <div style={{ border: "1px solid", margin: "1rem" }}>
+      <h2>{props.name}</h2>
+      <p>{props.email}</p>
+      <p>{props.age} years old</p>
+      {props.isRegistered ? (<p>Registered Student</p>) : (<p>Unregistered Student</p>
+      )}
+    </div>
+  );
+};
+export default User;
+```  
+# OR  
+## App.tsx  
+```
+import User from "./components/User";
+function App() {
+  return (
+    <div className="App">
+      <h1>User Management App</h1>
+      <User name="Md Naj"
+            email="mdnaj@gmail.com"
+            age={32}
+            isRegistered={true}
+      />
+    </div>
+  );
+}
+export default App;
+```  
+
+## User.tsx  
+```
+import React from "react";
+interface IUserProps {
+   name:string;
+   email: string;
+   age: number;
+   isRegistered: boolean;
+}
+const User: React.FunctionComponent<IUserProps> = ({name,email,age,isRegistered})=>{
+  return (
+    <div style={{ border: "1px solid", margin: "1rem" }}>
+      <h2>{name}</h2>
+      <p>{email}</p>
+      <p>{age} years old</p>
+      {isRegistered ? (<p>Registered Student</p>) : (<p>Unregistered Student</p>
+      )}
+    </div>
+  );
+};
+export default User;
+```  
 
 
 
@@ -762,10 +891,64 @@ const User = (props: UserProps) => {
 export default User;
 
 ```  
+# OR  
+## App.tsx
 
+```
+// import React from "react";
+// import "./App.css";
 
+import User from "./components/User";
 
+function App() {
+  return (
+    <div className="App">
+      <h1>User Management App</h1>
+      <User
+        name="Md Naj"
+        email="mdnaj@gmail.com"
+        age={32}
+        isRegistered={true}
+      />
+      <User   name="Md Saju"
+              email="mdsaju@gmail.com"
+              age={31}
+              isRegistered={false}
+      />
+    </div>
+  );
+}
 
+export default App;
+```  
+## User.tsx
+
+```
+import React from "react";
+
+type UserProps = {
+  name: string;
+  email: string;
+  age: number;
+  isRegistered: boolean;
+};
+
+const User:React.FunctionComponent<UserProps> = (props) => {
+  return (
+    <div style={{ border: "1px solid", margin: "1rem" }}>
+      <h2>{props.name}</h2>
+      <p>{props.email}</p>
+      <p>{props.age} years old</p>
+      {props.isRegistered ? (<p>Registered Student</p>) : (
+        <p>Unregistered Student</p>
+      )}
+      
+    </div>
+  );
+};
+export default User;
+
+```  
 # Version-3  
 ## App.tsx
 
@@ -822,10 +1005,12 @@ const User = ({ name, email, age, isRegistered }: UserProps) => {
 };
 export default User;
 ```  
-# Version-4   
-## App.tsx  
-
+# OR  
+## App.tsx
 ```
+// import React from "react";
+// import "./App.css";
+
 import User from "./components/User";
 
 function App() {
@@ -862,7 +1047,59 @@ type UserProps = {
   age: number;
   isRegistered: boolean;
 };
-const User: FunctionComponent<UserProps>= ({ name, email, age, isRegistered }) => {
+const User:React.FunctionComponent<UserProps> = ({ name, email, age, isRegistered }) => {
+  return (
+    <div style={{ border: "1px solid", margin: "1rem" }}>
+      <h2>{name}</h2>
+      <p>{email}</p>
+      <p>{age} years old</p>
+      {isRegistered ? <p>Registered Student</p> : <p>Unregistered Student</p>}
+    </div>
+  );
+};
+export default User;
+```  
+# Version-4   
+## App.tsx  
+
+```
+import User from "./components/User";
+
+function App() {
+  return (
+    <div className="App">
+      <h1>User Management App</h1>
+      <User
+        name="Md Naj"
+        email="mdnaj@gmail.com"
+        age={32}
+        isRegistered={true}
+      />
+      <User
+           name="Md Saju"
+           email="mdsaju@gmail.com"
+           age={31}
+           isRegistered={false}
+      />
+    </div>
+  );
+}
+
+export default App;
+```  
+
+
+ ## User.tsx  
+ 
+ ```
+import React from "react";
+type UserProps = {
+  name: string;
+  email: string;
+  age: number;
+  isRegistered: boolean;
+};
+const User: React.FunctionComponent<UserProps>= ({ name, email, age, isRegistered }) => {
   return (
     <div style={{ border: "1px solid", margin: "1rem" }}>
       <h2>{name}</h2>
