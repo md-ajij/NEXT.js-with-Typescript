@@ -95,7 +95,7 @@ function myFunc(a:number,b:number):void {
 myFunc(10,5);
 
 ```  
-# 7. Normal function that return a sting  
+# 7. Normal function that return a string  
 
 ```
 
@@ -196,15 +196,11 @@ const AddPost: React.FC<IPost> = ({ notes }) => {
                required
                minlength={4}
                maxlength={50}
-               
-             
-             
          />
       <div/>
     
     );
   }
-
 export defoult AddPost;
 ```  
 # 10.1 Type of Functional Component in NEXT.JS-WITH-TYPESCRIPT:-  
@@ -221,7 +217,7 @@ export interface IPost {
 }
 ```  
 # Type of Functional Components:-  
-// AddPost.tsx  
+## AddPost.tsx  
 ```
 
 import * as React from 'react';
@@ -278,10 +274,9 @@ const AddPost: React.FunctionComponent<Props> = ({ savePost }) => {
 
     setFormData({
 
-      ...formData,
+                 ...formData,
 
-      [e.target.name]: e.target.value,
-
+                 [e.target.name]: e.target.value,
     })
 
   }
@@ -367,7 +362,7 @@ const Home =()=>{
          <h1> {note.id}</h1>
          <h1> {note.title}</h1>
          <h1> {note.text}</h1>
-         <h1> {note.color}</h1>
+         <h1 className={note.color}> AutomaticallyColour Will be added.</h1>
          <h1> {note.date}</h1>
       </div>
    
@@ -407,7 +402,7 @@ const Home =()=>{
          <h1> {note.id}</h1>
          <h1> {note.title}</h1>
          <h1> {note.text}</h1>
-         <h1> {note.color}</h1>
+         <h1 className= {note.color}>Automatically color will be added.</h1>
          <h1> {note.date}</h1>
       </div>
    
@@ -453,7 +448,7 @@ const Home =()=>{
          <h1> {note.id}</h1>
          <h1> {note.title}</h1>
          <h1> {note.text}</h1>
-         <h1> {note.color}</h1>
+         <h1 className= {note.color}>Automatically color will be added.</h1>
          <h1> {note.date}</h1>
       </div>
    
@@ -517,7 +512,7 @@ const User: React.FunctionComponent<IUserProps>=({notes})=>{
          <h1>{note.id}</h1>
          <h1>{note.title}</h1>
          <h1>{note.text}</h1>
-         <h1 className={note.color}> Hey who are you ?</h1>
+         <h1 className= {note.color}>Automatically color will be added.</h1>
          <h1>{note.date}</h1>
       
       </div>
@@ -950,9 +945,7 @@ export default User;
 
 ```  
 # Version-3  
-## App.tsx
-
-
+## App.tsx  
 ```
 // import React from "react";
 // import "./App.css";
@@ -1211,7 +1204,6 @@ export default App;
 
 # User.tsx  
 
-
 ```
 // import React from "react";
 type UserProps = {
@@ -1220,7 +1212,7 @@ type UserProps = {
 }
 const User =({lang}: UserProps) => {
    return(
-      <dic>
+      <div>
          <p> Speaks: {lang.map((language,index)=>{
                     return <span key={index}>{language}</span> ;
               })};
@@ -1259,8 +1251,6 @@ export default App;
 ```  
 
 # User.tsx  
-
-
 ```
 // import React from "react";
 
@@ -1290,7 +1280,7 @@ export default User;
 
 
 
-# 14.4 Array of Object:-  
+# 14.4 Array of Objects:-  
 
 ## App.tsx  
 
@@ -1339,7 +1329,7 @@ export default App;
 
 type UserProps = {
   user: {
-    id: number,
+    id: number;
     name: string;
     email: string;
     age: number;
@@ -1363,7 +1353,7 @@ const User = ({ user }: UserProps) => {
 export default User;
 
 ```  
-# 14.5 Array of Object:-  
+# 14.5 Array of Objects:-  
 ## App.tsx  
 
 ```
@@ -1392,10 +1382,8 @@ const usersDetails =[
 function App() {
   return (
     <div className="App">
-      <h1>User Details </h1>
-     
+        <h1>User Details </h1>
         <User users={usersDetails} />
-      ))}
     </div>
   );
 }
@@ -1451,18 +1439,18 @@ export default User;
 import User from "./components/User";
 
 const user1 = {
-  name: "anisul islam",
-  email: "anisul2010s@yahoo.co.uk",
-  age: 32,
+  name: "Md Naj",
+  email: "mdnaj@gmail.com",
+  age: 36,
   isRegistered: true,
   lang: ['Beng','Eng'],
 };
 const user2 = {
-  name: "Rabeya Begum",
-  email: "rabu2010s@yahoo.co.uk",
-  age: 31,
+  name: "Md Saju",
+  email: "mdsaju@gmail.com",
+  age: 35,
   isRegistered: false,
-  lang: ['Arabic', 'Hindi'],
+  lang: ['Arabic', 'Oria'],
 };
 
 function App() {
@@ -1680,7 +1668,8 @@ export default Button;
 
 # 18. Hook type:-  
 
-## 18.1 useState Hooks's Type:-  
+## 18.1 useState Hooks's variable Type:-  
+## Automatically type set by default value  
 ## App.tsx  
 
 ```
@@ -1727,7 +1716,10 @@ const App = () => {
 
   const handleSetData = () => {
     // setData("Md Naj");
-    setData({ id: 1, name: "Md Naj" });
+    setData({ 
+               id: 1,
+               name: "Md Naj"
+    });
     console.log(data);
   };
 
@@ -1763,7 +1755,10 @@ const App = () => {
 
   const handleSetData = () => {
     // setData("Md Naj");
-    setData({ id: 1, name: "Md Naj" });
+    setData({ 
+              id: 1,
+              name: "Md Naj"
+    });
     console.log(data);
   };
 
@@ -1932,7 +1927,7 @@ export default NewUser;
 
 export default NewUser;
 ```  
-# 20. Input Field onChange Event  
+# 20. onChange Event type of Input Field:-    
 # Ajij.tsx  
 
   ```
